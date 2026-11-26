@@ -1,0 +1,28 @@
+{
+  "name": "newbury-video-cleaner",
+  "version": "1.0.0",
+  "description": "Local Windows app that remuxes MP4/MOV files without re-encoding and omits inherited metadata.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "uk.ac.newburycollege.videocleaner",
+    "productName": "Newbury Video Cleaner",
+    "files": ["main.js", "preload.js", "index.html", "styles.css", "renderer.js", "package.json"],
+    "extraResources": [{
+      "from": "node_modules/@ffmpeg-installer/win32-x64/ffmpeg.exe",
+      "to": "ffmpeg.exe"
+    }],
+    "win": { "target": "portable" },
+    "artifactName": "Newbury-Video-Cleaner-${version}.exe"
+  }
+}

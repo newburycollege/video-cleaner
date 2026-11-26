@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Newbury Video Cleaner</title><link rel="stylesheet" href="styles.css"></head>
+<body><main>
+  <header><div class="mark">NC</div><div><h1>Newbury Video Cleaner</h1><p>Creates a clean delivery copy without re-encoding the video or audio.</p></div></header>
+  <section id="drop" class="drop" tabindex="0" role="button" aria-label="Choose a video">
+    <strong>Drop an MP4 or MOV here</strong><span>or click to choose a file</span>
+  </section>
+  <section class="card">
+    <div class="label">Selected file</div><div id="fileName" class="filename">No file selected</div><div id="filePath" class="path"></div>
+    <div class="actions"><button id="scan" disabled>Scan for markers</button><button id="clean" class="primary" disabled>Clean video</button></div>
+  </section>
+  <section id="status" class="status info" aria-live="polite">Select a video to begin.</section>
+  <details><summary>Processing log</summary><pre id="log"></pre></details>
+  <button id="show" class="show" hidden>Show cleaned file in Explorer</button>
+  <footer>The original file is never changed. The clean copy is saved beside it as <b>-CLEAN.mp4</b> or <b>-CLEAN.mov</b>.</footer>
+</main><script src="renderer.js"></script></body></html>
